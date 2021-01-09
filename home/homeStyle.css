@@ -1,0 +1,94 @@
+.home-row {
+  display: flex;
+}
+
+.home-column {
+  width: 50%;
+  height: 90vh;
+  border-bottom: .75rem solid var(--white--);
+  padding-left: 37rem;
+  padding-right: 37rem;
+  padding-top: 10vh;
+}
+
+#right-column {
+  border-left: .75px solid var(--white--);
+}
+
+#welcome-message {
+  position: absolute;
+  top: 35vh;
+}
+
+#hi {
+  font-size: 40rem;
+  margin: 0;
+}
+
+#william {
+  font-size: 60rem;
+  letter-spacing: 5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+#quotes {
+  position: absolute;
+  bottom: 4vh;
+  width: 35vw;
+  font-size: 25rem;
+  line-height: 1.8;
+}
+
+#quotes a {
+  cursor: pointer;
+  color: var(--white--);
+  text-decoration: none;
+}
+
+@keyframes quoteFadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes quoteFadeOut {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes homeAnimate {
+  0%{
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+
+#homeOrbit {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  margin-top: 12vh;
+}
+
+#nothing-message {
+  position: absolute;
+  bottom: 4vh;
+  right: 37rem;
+  text-align: right;
+}
+
+#about-page {
+  opacity: 0;
+}
