@@ -36,6 +36,7 @@ function navScroll(){
   }
 }
 
+
 navHover();
 window.onload = navScroll;
 window.addEventListener("scroll", navScroll);

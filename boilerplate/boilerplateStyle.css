@@ -15,7 +15,7 @@ body {
   line-height: 1.35;
 }
 
-p{
+p, h1, h2, h3, h4, h5 {
   color: var(--white--);
   padding: 0;
 }

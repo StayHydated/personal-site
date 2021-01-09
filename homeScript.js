@@ -143,7 +143,6 @@ function aboutTransition(){
       tl.reverse();
       setTimeout(() => {
         document.querySelector("body").style.overflow = "visible";
-        console.log("yes");
       }, 1500);
       onHome = true;
     }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>It's William! | A Welcoming Website</title>
+    <!--haven't linked css and js to root to develop locally-->
+    <link rel="stylesheet" href="../boilerplate/boilerplateStyle.css">
+    <link rel="stylesheet" href="../archive/WebsiteBuildingStyle.css">
+    <script src="../boilerplate/boilerplateScript.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="../boilerplate/favicon.png"/>
+  </head>
+  <body>
+    <nav>
+      <ul class="top-nav-links">
+        <li><a id="homeButton" href="../index.html">home</a></li>
+        <li><a id="aboutButton" href="../index.html">about</a></li>
+        <li><a href="../archive/archive.html">archive</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2>How Websites Work</h2>
+      <p>When you’re browsing the web, you’re essentially fetching data from a server
+         and viewing it on your local machine. To do so, a connection must be established
+         between your machine and the site you are trying to reach. Every device connected to a
+         network has a numerical label assigned to it known as an IP address and these are essential
+         in making connections.</p>
+      <p>Thus, the first step of visiting any website is translating the domain name
+         into the site’s proper IP address. Google.com becomes 172.217.6.174,
+         wikipedia.org becomes 208.80.153.224, and whuynh.me becomes 34.107.207.163.
+         For demonstration’s sake, copy and paste 172.217.6.174 into your browser and
+         see where it leads you. It should be noted that accessing websites through their
+         IP addresses will not always work as some addresses host several websites.
+         In addition, SSL is tied to domain names, not IP addresses so you might
+         get a bunch of security alerts if you try to access a site through its
+         IP address. The system that performs this translation is known as DNS
+         (Domain Name System) but if you visit a site frequently enough, its IP
+         address would be stored in cache.</p>
+      <p>Now that we know the address of the site we’re trying to get to, we
+         establish a connection with it. If you’re interested, you can dive into
+         TCP and TLS to find out how this connection is kept secure. For the purposes
+         of building a website all we need to know is that your browser sends a
+         request (oftentimes a GET request) to ask the server to send over the
+         website data. The server sends the appropriate files, and your browser
+         transforms the files into a viewable website.</p>
+      <h2>What Do I Have To Pay For?</h2>
+      <p>You’ll have to pay for a domain name because nobody wants to access a
+         site using its multi-digit long IP address. Unless you’re vying for a
+         contested word, these are pretty inexpensive. For context, the domain
+         name for this site costs less than $5 per year.</p>
+      <p>You’ll also have to pay for a service to store your site’s files as well
+         as run any backend code. This will be the server that visitors will
+         connect to when accessing your site. Most hosting services offer shared
+         hosting, VPS hosting, and dedicated hosting. The former of these options
+         is cheapest, and the latter of these options can handle the largest load
+         but is more expensive.</p>
+      <p>If your site is completely client-based, then another option would be to
+         use cloud storage. Static sites do not require server compute power and
+         thus are cheaper to host. Most blogs, marketing websites, and this site
+         operate as static sites. If you intend to do stuff like collect visitor
+         data, send and receive cookies, or generate dynamic page content, then
+         you’ll have to invest in a traditional hosting service.</p>
+      <h2>Writing The Code</h2>
+      <p>The traditional method of creating a site involves learning the necessary
+         HTML, CSS, JavaScript, and PHP and building it up from scratch. This is
+         a great exercise for the build-it-yourself type and there is a plethora
+         of free resources that will guide you through web-based languages. </p>
+      <p>If you aren’t interested in doing that of if you don’t have the time to
+         invest, you could use WordPress, a content management system that allows
+         you to drag and drop webpage elements. WordPress allows you to create a
+         fully functional site with zero programming knowledge.</p>
+    </main>
+
+
+
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js" integrity="sha512-elauk8NI35rjTlatfRQxeqmJoieQlfm0W8AeQVps+j+KkMDdaqNxVazFzwyU7uSOyeeVn/VLbGYLwOR/D5I6Kw==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/ScrollTrigger.min.js" integrity="sha512-VVSEbx0kiWyvgjB6m2CCZRz53eN8Q7gy5e3nwqa71U+XkS7H7n9iTQwFyY5qTJKJVLP8QnOdBhKwEp52Ra2+bw==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.1/CSSRulePlugin.min.js" integrity="sha512-xjM58s7BL5NQN1Wo7AsI1Ee6VIdRM3oSPdaDNug6tWc+2ORNUfyQNDJMtZeGytT3catRnJxtFJx1Wiodk7/qgg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollToPlugin.min.js" integrity="sha512-qFrVIKAX88m3zoxJzTl97rUnj5oNZkxDiomOwEuehxk+OMCQmJfwMGTWsLEw30VvIV2G2u0kbUcKEnIA9vj4qw==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" integrity="sha512-HzAEuXwhLxwm/Jj+5ecdjzrRVrjuh2ZeIxyT1Ln37TO5pWNMnKBuU7cfd1wvRQ/k86w1oC174Yk1T7aRlBpIcA==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js" integrity="sha512-Ey+nIg+Ue8gUAaCNjR1KHR8nwDjWn9QXoQbynR/X+V66s6u1oqynnuRQ8zSgg5f5gBNb2Bzsu1pItCi3sPkbfA==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js" integrity="sha512-jlbgjhSLRQsQc/bits6lHjywF3n/NLO3Sz1rwa9gsUnCOi0f0lD/yAul75UNOzIiDg35zaJJ3BKT3zo6+i9lQA==" crossorigin="anonymous"></script>
+
+
+</html>
