@@ -92,3 +92,8 @@
 #about-page {
   opacity: 0;
 }
+
+#noStyle:link, #noStyle:visited {
+   text-decoration: none;
+   color: inherit;
+}
