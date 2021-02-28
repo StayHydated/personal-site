@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>It's William! | A Welcoming Website</title>
+    <!--haven't linked css and js to root to develop locally-->
+    <link rel="stylesheet" href="../boilerplate/boilerplateStyle.css">
+    <link rel="stylesheet" href="../archive/ResourceMonitorStyle.css">
+    <script src="../boilerplate/boilerplateScript.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="../boilerplate/favicon.png"/>
+  </head>
+  <body>
+    <nav>
+      <ul class="top-nav-links">
+        <li><a id="homeButton" href="../index.html">home</a></li>
+        <li><a id="aboutButton" href="../index.html">about</a></li>
+        <li><a href="../archive/archive.html">archive</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <p>Resource Monitor is a Windows desktop application that displays system hardware information such as CPU load, CPU frequency,
+         memory load, and disk load in a transparent, HUD-like, always-on-top overlay. This allows
+         hardware to be monitored without the use of a separate window such as Task Manager's performance tab.</p>
+      <video width="100%" controls>
+        <source src="rscmon.mp4" type="video/mp4">
+      </video>
+      <p>The overlay can be toggled on and off through a hotkey and is customizable. Individual counters
+         can be moved around and their font, font color, font size, and background can be changed.
+         Resource Monitor can also be launched on Windows startup.</p>
+      <p><a id="noStyle" href="Resource Monitor.zip">Download Resource Monitor</a></p>
+      <p><a id="noStyle" href="https://github.com/StayHydated/Resource-Monitor">Github</a></p>
+      <br>
+      <h2>Win32 Sadness</h2>
+      <p>The first step in learning anything new consists of writing a simple 'hello world' program.
+         These usually take up a few lines, are easy to understand, and provide a great starting point.
+         Charles Petzold, author of Programming Windows, writes: "The original hello world program
+         in the Windows 1.0 SDK was a bit of a scandal. HELLO.C was about 150 lines long, and the HELLO.RC
+         resource script had another 20 or so more lines... Veteran programmers often curled up in horror or
+         laughter when encountering the Windows hello-world program."</p>
+      <p>So the Win API learning curve is quite steep, but developers are rewarded with access to low-level
+         operations that allow their applications to have more flexibility and power.
+         Back when Win API was first being developed, Microsoft had to support various CPU architectures and compilers.
+         There were differences in 16 bit and 32 bit processors. There were differences in pre-ANSI C and unstandardized C++ compilers.
+         There were differences in Intel, PowerPC, and ARM chips. Microsoft had to move from single-core to multi-core
+         systems, deal with segmented memory, and support international encoding before Unicode existed.
+         All of this results in many, Win32-specific custom types that seek to standardize development.</p>
+      <p>For example, a data type of name <code>BOOL</code> exists. This is not to be confused with the traditional C++ <code>bool</code>,
+         which is a boolean variable that takes either <code>true</code> or <code>false</code>. Rather <code>BOOL</code> is an int that takes or returns
+         values <code>TRUE</code> and <code>FALSE</code> which are not booleans but ints as well. This results in functions as such as
+         <code>BOOL CALLBACK EditDlgProc(HWND hwndDlg, UINT message, WPARAM wParam, LPARAM lParam);</code> which at first glance
+         seems to return a true or false depending on whether or not it succeeds but in actuality returns the int 1, 0,
+         or a numeric error code. If you're like me and wondering why this isn't written as
+         <code>int CALLBACK EditDlgProc(HWND hwndDlg, UINT message, WPARAM wParam, LPARAM lParam);</code>, it's because it was
+         once considered good practice to use abstract types rather than primitive types such as int, bool, and char.</p>
+      <p>Here's another example. Word. I know what a word is. You know what a word is. A word is a collection of letters.
+         So when Win32 documentation lists something like <code>DWORD</code>, I was absolutely floored to find out that DWORD is actually
+         an <code>unsigned long int</code>. So instead of passing in a word into DWORD, I would be passing in numbers. Unsurprisingly, <code>WORD</code>
+         is an <code>unsigned short int</code>. This leads to functions like <br><code>HFONT CreateFontA(<br>
+            int    cHeight,<br>
+            int    cWidth,<br>
+            int    cEscapement,<br>
+            int    cOrientation,<br>
+            int    cWeight,<br>
+            DWORD  bItalic,<br>
+            DWORD  bUnderline,<br>
+            DWORD  bStrikeOut,<br>
+            DWORD  iCharSet,<br>
+            DWORD  iOutPrecision,<br>
+            DWORD  iClipPrecision,<br>
+            DWORD  iQuality,<br>
+            DWORD  iPitchAndFamily,<br>
+            LPCSTR pszFaceName<br>
+            );</code><br>
+         where the unassuming programmer might think the parameter
+         <code>DWORD  bItalic</code> would take some type of word that describes the italic setting. Maybe something like 'italic' or 'normal'.
+         You would actually pass in <code>TRUE</code> which represents the numeric value 1 and can be stored as an int. Confusingly,
+         there are also regular int parameters that CreateFontA takes along with its DWORD parameters that are not words, but ints.<p>
+    </main>
+    <br><br><br><br><br><br><br>
+
+
+
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js" integrity="sha512-elauk8NI35rjTlatfRQxeqmJoieQlfm0W8AeQVps+j+KkMDdaqNxVazFzwyU7uSOyeeVn/VLbGYLwOR/D5I6Kw==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/ScrollTrigger.min.js" integrity="sha512-VVSEbx0kiWyvgjB6m2CCZRz53eN8Q7gy5e3nwqa71U+XkS7H7n9iTQwFyY5qTJKJVLP8QnOdBhKwEp52Ra2+bw==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.1/CSSRulePlugin.min.js" integrity="sha512-xjM58s7BL5NQN1Wo7AsI1Ee6VIdRM3oSPdaDNug6tWc+2ORNUfyQNDJMtZeGytT3catRnJxtFJx1Wiodk7/qgg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollToPlugin.min.js" integrity="sha512-qFrVIKAX88m3zoxJzTl97rUnj5oNZkxDiomOwEuehxk+OMCQmJfwMGTWsLEw30VvIV2G2u0kbUcKEnIA9vj4qw==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" integrity="sha512-HzAEuXwhLxwm/Jj+5ecdjzrRVrjuh2ZeIxyT1Ln37TO5pWNMnKBuU7cfd1wvRQ/k86w1oC174Yk1T7aRlBpIcA==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js" integrity="sha512-Ey+nIg+Ue8gUAaCNjR1KHR8nwDjWn9QXoQbynR/X+V66s6u1oqynnuRQ8zSgg5f5gBNb2Bzsu1pItCi3sPkbfA==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js" integrity="sha512-jlbgjhSLRQsQc/bits6lHjywF3n/NLO3Sz1rwa9gsUnCOi0f0lD/yAul75UNOzIiDg35zaJJ3BKT3zo6+i9lQA==" crossorigin="anonymous"></script>
+
+
+</html>

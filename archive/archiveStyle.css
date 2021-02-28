@@ -5,8 +5,11 @@ main {
    margin-right: auto;
 }
 
-
 main a {
    text-decoration: none;
    color: inherit;
+}
+
+#article + #article {
+   border-top: solid white 1px;
 }
